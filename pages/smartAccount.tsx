@@ -60,7 +60,7 @@ export default function SmartAccount() {
        if (client) {
            const txn = await client.sendTransaction({
                 to: receiverAddress,
-                value: amount
+                value: parseInt(amount)
            })
            console.log("Transaction ", txn);
 
@@ -76,7 +76,7 @@ export default function SmartAccount() {
         if (signer) {
             const tx = await signer.sendTransaction({
                 to: smartWalletAddress,
-                value: fundAmount
+                value: parseInt(fundAmount)
             })
 
             console.log("Transaction ", tx);
